@@ -6,10 +6,6 @@
 }
 body{
     width: 375px;
-    height: 667px;
-
-    background-color: #FAFAFA
-
 }
 footer{
     display: flex;
@@ -53,9 +49,8 @@ textarea, input, select {
 
       margin-right: 18px;
   }
-.container{
+div.container{
     width: 100%;
-    height: 100vw;
     background-color: #fafafa;
 }
 main.conteudo{
