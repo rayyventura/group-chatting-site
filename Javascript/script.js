@@ -24,12 +24,13 @@ function tratarSucessoMensagem(resposta){
 let containerMensagem = document.querySelector('.conteudo');
 console.log(resposta.data);
 for(let i=0;resposta.data.length; i++){
-    if(resposta.data[i].type==='message'){
-        containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  <span class='para'>para</span> <span class='destine'>${resposta.data[i].to}: </span> ${resposta.data[i].text}</div>`
-    }else if(resposta.data[i].type==='status'){
+    const tipoMensagem=resposta.data[i].type;
+    if(tipoMensagem==='message'){
+        containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  <span class='para'>para</span> <span class='destine'>${resposta.data[i].to}: </span> <span class="texto">${resposta.data[i].text}</span></div>`
+    }else if(tipoMensagem==='status'){
         containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  ${resposta.data[i].text}</div>`
-    }else if(resposta.data[i].type==='private_message'){
-        containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  <span class='para'>reservadamente para</span> <span class='destine'>${resposta.data[i].to}: </span> ${resposta.data[i].text}</div>`
+    }else if(tipoMensagem==='private_message'){
+        containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  <span class='para'>reservadamente para</span> <span class='destine'>${resposta.data[i].to}: </span> <span class="texto">${resposta.data[i].text}</div>`
     }
 }
  

@@ -8,6 +8,8 @@ body{
     width: 375px;
     height: 667px;
 
+    background-color: #FAFAFA
+
 }
 footer{
     display: flex;
@@ -24,7 +26,6 @@ footer{
     bottom: 0;
     left: 0;
 
-    margin-top: 10px;
 }
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
@@ -55,11 +56,11 @@ textarea, input, select {
 .container{
     width: 100%;
     height: 100vw;
-    background-color: #FAFAFA;
-
+    background-color: #fafafa;
+}
+main.conteudo{
+    padding-bottom: 90px;
     padding-top: 100px;
-    padding-bottom: 100px;
-
 }
 
 .topo{
@@ -96,7 +97,7 @@ textarea, input, select {
     background-color: #DCDCDC;
 
     margin-bottom: 4px;
-    padding: 5px;
+    padding: 9px;
 }
 .private_message{
     width:100%;
@@ -112,12 +113,15 @@ textarea, input, select {
     background-color: #ffffff;
 
     margin-bottom: 4px;
-    padding: 5px;
+    padding: 9px;
 }
 .time{
     color: #AAAAAA;
 
     font-size: 14px;
+}
+.texto{
+    word-wrap: break-word;
 }
 .origin,.destine{
     font-size: 14px;
