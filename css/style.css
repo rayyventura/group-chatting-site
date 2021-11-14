@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    width: 375px;
+    height: 667px;
+
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width:375px;
+    height: 80px;
+
+    background-color: white;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    margin-top: 10px;
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+textarea, input, select {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+
+    font-style: roboto;
+    margin-left:17px;
+} 
+::-webkit-input-placeholder {
+    color: #000000;
+
+    font-family: 'Roboto';
+    font-style:italic ;
+    font-size: 17px;
+  }
+  .send-icon img{
+      width:20px;
+      height:20px;
+
+      margin-right: 18px;
+  }
+.container{
+    width: 100%;
+    height: 100vw;
+    background-color: #FAFAFA;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width:375px;
+    height: 80px;
+
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.topo-esquerda img{
+    width: 75px;
+    height: 53px;
+
+    margin-left: 20px;
+}
+.topo-direita img{
+    width: 45px;
+    height: 45px;
+    margin-right: 21px;
+}
+
+.status{
+    width:100%;
+
+    background-color: #DCDCDC;
+
+    margin-bottom: 4px;
+    padding: 5px;
+}
+.private_message{
+    width:100%;
+
+    background-color: #FFDEDE;
+
+    margin-bottom: 4px;
+    padding: 9px;
+}
+.message{
+    width:100%;
+
+    background-color: #ffffff;
+
+    margin-bottom: 4px;
+    padding: 5px;
+}
+.time{
+    color: #AAAAAA;
+
+    font-size: 14px;
+}
+.origin,.destine{
+    font-size: 14px;
+    font-weight: bold;
+}
