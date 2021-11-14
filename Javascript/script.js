@@ -17,11 +17,13 @@ function tratarSucessoLogin(resposta){
 }
 function tratarErroLogin(resposta){
 nameUser = prompt('Digite outro nome, pois esse já está em uso!');
+console.log(resposta.data.response);
 logarUsuario();
 }
 
 let containerMensagem = document.querySelector('.conteudo');
 function tratarSucessoMensagem(resposta){
+    containerMensagem.innerHTML='';
 for(let i=0;resposta.data.length; i++){
     const tipoMensagem=resposta.data[i].type;
     if(tipoMensagem==='message'){
@@ -32,15 +34,11 @@ for(let i=0;resposta.data.length; i++){
         containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  <span class='para'>reservadamente para</span> <span class='destine'>${resposta.data[i].to}: </span> <span class="texto">${resposta.data[i].text}</div>`
     }
     const lastMessage=containerMensagem.lastElementChild;
-    lastMessage.scrollIntoView();
+    lastMessage.scrollIntoView({behavior:"smooth"});
 }
-}
-function recarregarMensagens(){
-    containerMensagem.innerHTML='';
-    tratarSucessoLogin();
 }
 
 function tratarErroMensagem(resposta){
 console.log(resposta.data);
 }
-setInterval(recarregarMensagens,3000);
+setInterval(tratarSucessoLogin,3000);
