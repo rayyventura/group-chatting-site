@@ -2,16 +2,11 @@ const containerMensagem = document.querySelector('.conteudo');
 let nameUser = prompt("Qual o seu nome?")
 let enviarPara='Todos';
 let visibilidade='message';
-
-document.querySelector('footer input').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      enviarMensagem();
-    }
-});
-
 setInterval(tratarSucessoLogin,3000);
 setInterval(atualizarStatus,5000);
 setInterval(verificarParticipantes,10000);
+
+
 
 const userName ={
     name:nameUser
@@ -24,14 +19,14 @@ function logarUsuario(){
 logarUsuario();
 
 function tratarSucessoLogin(resposta){
-   const promessa = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages');
-   promessa.then(tratarSucessoMensagem);
-   promessa.catch(tratarErroMensagem);
+    const promessa = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages');
+    promessa.then(tratarSucessoMensagem);
+    promessa.catch(tratarErroMensagem);
 }
 function tratarErroLogin(resposta){
-nameUser = prompt('Digite outro nome, pois esse já está em uso!');
-console.log(resposta.data.response);
-logarUsuario();
+    nameUser = prompt('Digite outro nome, pois esse já está em uso!');
+    console.log(resposta.data.response);
+    logarUsuario();
 }
 
 function tratarSucessoMensagem(resposta){
@@ -45,14 +40,14 @@ function tratarSucessoMensagem(resposta){
             containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  ${resposta.data[i].text}</div>`
         }else if(resposta.data[i].from===nameUser || resposta.data[i].to == enviarPara || resposta.data[i].to ==='Todos'){
             containerMensagem.innerHTML +=` <div class="${resposta.data[i].type}" data-identifier="message"><span class="time">(${resposta.data[i].time})</span>  <span class="origin">${resposta.data[i].from}</span>  <span class='para'>reservadamente para</span> <span class='destine'>${resposta.data[i].to}: </span> <span class="texto">${resposta.data[i].text}</div>`
+        }
+        const lastMessage=containerMensagem.lastChild;
+        lastMessage.scrollIntoView({behavior:"smooth"});
+        
     }
-     const lastMessage=containerMensagem.lastChild;
-     lastMessage.scrollIntoView({behavior:"smooth"});
-    
-}
 }
 function tratarErroMensagem(resposta){
-console.log(resposta);
+    console.log(resposta);
 }
 
 function atualizarStatus(){
@@ -63,16 +58,21 @@ function atualizarStatus(){
 function enviarMensagem(){
     let input = document.querySelector('input');
     const message= {
-	from: nameUser,
-	to: enviarPara,
-	text: input.value,
-	type: visibilidade 
-}
+        from: nameUser,
+        to: enviarPara,
+        text: input.value,
+        type: visibilidade 
+    }
     const promessa = axios.post('https://mock-api.driven.com.br/api/v4/uol/messages', message);
     promessa.then(tratarSucessoLogin);
     promessa.catch(erroEnvioMensagem);
     input.value='';
 }
+document.querySelector('footer input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      enviarMensagem();
+    }
+});
 function erroEnvioMensagem(){
     window.location.reload();
 }
