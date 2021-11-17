@@ -10,9 +10,8 @@ body{
 
 footer{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: space-between;
+    justify-content: space-between;
+    align-items: center;
 
     height: 80px;
     width: 100%;
@@ -26,11 +25,7 @@ footer{
 
     cursor: pointer;
 }
-.footer1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
