@@ -4,11 +4,15 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+body{
+    font-family: 'Roboto';
+}
 
 footer{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
 
     height: 80px;
     width: 100%;
@@ -20,6 +24,12 @@ footer{
     bottom: 0;
     left: 0;
 
+    cursor: pointer;
+}
+.footer1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
@@ -33,7 +43,14 @@ textarea, input, select {
 
     font-style: roboto;
     margin-left:17px;
+
+    cursor:pointer;
+    height: 80px;
+    
 } 
+.input{
+    width:100%;
+}
 ::-webkit-input-placeholder {
     color: #000000;
 
@@ -82,6 +99,8 @@ main.conteudo{
     width: 45px;
     height: 45px;
     margin-right: 21px;
+
+    cursor: pointer;
 }
 
 .status{
@@ -119,4 +138,101 @@ main.conteudo{
 .origin,.destine{
     font-size: 14px;
     font-weight: bold;
+}
+.opcoes{
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    width:100%;
+    height: 100vh;
+
+}
+.esquerda{
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    width: 30%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    cursor: pointer;
+}
+.direita{
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 70%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+
+}
+.escolher-contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    height: 84px;
+
+    word-wrap: break-word;
+
+}
+.escolher-contato p{
+    margin-top: 5px;
+}
+.escolher-visibilidade{
+    font-weight: bold;
+    font-size: 16px;
+
+    height: 66px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opcoes-envio,.opcoes-visibilidade{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.text-visibility,.text-envio{
+    font-size: 16px;
+}
+.publico,.reservadamente,.todos,.pessoa{
+    display: flex;
+    align-items: center;
+    
+    margin-left: 17px;
+
+    cursor: pointer;
+}
+.publico img, .reservadamente img, .todos img, .pessoa img{
+    margin-right: 10px;
+}
+.display-none{
+    display: none;
+}
+img.check {
+    margin-left: 15px;
+}
+
+.mensagemEnvio{
+    position: fixed;
+    bottom: 8px;
+    left: 15px;;
+
+    font-size: 18px;
+    color: #505050;
 }
