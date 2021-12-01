@@ -1,4 +1,4 @@
-# Bate-Papo-UOL
+# Chatting Site - Bate Papo UOL
 Site Published at: https://rayyventura.github.io/Bate-Papo-UOL/
 
 Chatting website</br>
