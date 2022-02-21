@@ -1,5 +1,5 @@
 # Bate Papo UOL
-Site Published at: https://rayyventura.github.io/Chatting_Site_-Bate_Papo_UOL-/
+Site Published at: https://rayyventura.github.io/group-chatting-site/
 
 ## Chatting Website</br>
 🎯 Target: **Javascript** (**API** requests with axios)</br>
